@@ -18,7 +18,7 @@ A lightweight homepage redesign concept built with plain HTML, CSS, and a small 
 - `styles/sections.css` contains section-specific desktop styles.
 - `styles/responsive.css` contains breakpoint adjustments.
 - `scripts/main.js` contains only the mobile navigation interaction.
-- `assets/images/*.svg` are temporary concept illustrations and must be replaced with approved client assets before final delivery.
+- `assets/images/*.svg` are temporary concept illustrations. The customer gallery, storage example and organisation logos currently reference public media already shown on the existing client site; package and optimize approved assets locally before final delivery.
 
 ## Technical principles
 

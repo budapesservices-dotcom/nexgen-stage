@@ -135,3 +135,52 @@
   .application__title { font-size: 1.25rem; }
   .site-footer__main { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 1100px) {
+  .funding-spotlight__inner { grid-template-columns: .55fr 1.45fr; }
+  .funding-spotlight__inner > .button { grid-column: 2; justify-self: start; }
+  .customer-gallery__grid { grid-template-rows: repeat(2, minmax(155px, 1fr)); }
+  .partner-strip__inner { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .partner-strip__inner > p { grid-column: 1 / -1; justify-self: center; text-align: center; }
+}
+
+@media (max-width: 760px) {
+  .funding-spotlight__inner { grid-template-columns: 1fr; align-items: start; gap: 1.2rem; padding-block: 2.8rem; }
+  .funding-spotlight__label { font-size: .64rem; }
+  .funding-spotlight__copy h2 { font-size: clamp(3rem, 12vw, 4rem); }
+  .funding-spotlight__copy p { font-size: .8rem; }
+  .funding-spotlight__inner > .button { grid-column: auto; }
+  .funding-spotlight__geometry { right: -29%; opacity: .2; }
+  .range-specs { margin-block: .9rem; }
+  .range-specs li { font-size: .66rem; }
+  .range-card__price { margin-bottom: .2rem; }
+  .customer-gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; gap: .55rem; }
+  .gallery-tile { min-height: 190px; }
+  .gallery-tile--feature { grid-row: auto; }
+  .gallery-tile--wide { grid-column: auto; }
+  .gallery-tile__caption { right: .7rem; bottom: .7rem; left: .7rem; }
+  .gallery-tile__caption strong { font-size: 1.25rem; }
+  .gallery-tile__caption small { font-size: .52rem; }
+  .gallery-tile__arrow { width: 29px; height: 29px; }
+  .customer-gallery__footer { align-items: start; flex-direction: column; }
+  .platform-feature__layout { grid-template-columns: 1fr; gap: 2rem; }
+  .platform-feature__copy h2, .testimonials .section-heading h2 { font-size: clamp(3.6rem, 14vw, 5rem); }
+  .platform-feature__copy > .text-link { margin-left: 0; margin-top: .5rem; }
+  .platform-feature__image-label { right: .7rem; bottom: .7rem; left: .7rem; font-size: .56rem; }
+  .testimonial-grid { grid-template-columns: 1fr; gap: .7rem; }
+  .testimonial-card { min-height: auto; padding: 1.3rem; }
+  .testimonial-card__mark { height: 39px; font-size: 3.5rem; }
+  .testimonial-card blockquote { margin-bottom: 1.2rem; font-size: .8rem; }
+  .partner-strip__inner { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem 1rem; padding-block: 1.4rem; }
+  .partner-strip__inner > p { grid-column: 1 / -1; }
+  .partner-strip__inner img { max-width: 100px; max-height: 36px; }
+}
+
+@media (max-width: 420px) {
+  .customer-gallery__grid { grid-template-columns: 1fr; }
+  .gallery-tile { min-height: 220px; }
+  .platform-feature__facts { grid-template-columns: 1fr 1fr; }
+  .testimonial-card figcaption { flex-wrap: wrap; }
+  .testimonial-card__type { margin-left: 0; }
+  .partner-strip__inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
