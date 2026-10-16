@@ -152,8 +152,10 @@ def main() -> int:
         fail("old cyan/magenta grid colours must not return")
     if "rgb(33 74 74) / 28%" in hero_css:
         fail("invalid RGB alpha syntax in the hero backdrop")
-    if "STEELCITY" not in page_html or "STAGE MODULES" not in page_html:
-        fail("official NexGen wordmark wording is missing")
+    if 'src="assets/images/nexgen-steelcity-wordmark.svg"' not in page_html:
+        fail("official NexGen SteelCity SVG wordmark is missing from the header")
+    if 'class="brand__mark"' not in page_html or "brand__mark-outer" not in page_html:
+        fail("animated geometric logo mark is missing from the header")
 
     if not (ROOT / "scripts" / "main.js").is_file():
         fail("scripts/main.js is missing")
@@ -188,7 +190,7 @@ def main() -> int:
         fail("GitHub Pages deploy workflow no longer deploys on main")
 
     print("PASS  unique HTML IDs and valid in-page anchors")
-    print("PASS  official NexGen palette and wordmark wording")
+    print("PASS  official NexGen palette, SVG wordmark, and animated mark")
     print("PASS  large-scale static NexGen hero grid")
     print("PASS  local CSS, script, and image references")
     print("PASS  one H1, main landmark, and accessible mobile-nav wiring")
