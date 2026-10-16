@@ -1,22 +1,34 @@
 :root {
   color-scheme: light;
-  --green-950: #03291f;
-  --green-900: #063d32;
-  --green-800: #0b4c3d;
-  --green-700: #17634e;
-  --green-600: #357458;
-  --green-500: #4a8e68;
-  --lime-500: #b7ef59;
-  --lime-400: #caff75;
-  --lime-200: #e4f8c1;
-  --white: #ffffff;
-  --paper: #f5f7f2;
-  --paper-strong: #edf1e9;
-  --ink: #171d19;
-  --ink-soft: #4e5d53;
-  --muted: #7b897f;
-  --line: #dce5dc;
-  --line-dark: rgb(225 245 229 / 17%);
+
+  /* Official NexGen identity */
+  --brand-teal: #214a4a;
+  --brand-lime: #daf450;
+  --brand-white: #fdffff;
+
+  /* Derived tones: backstage depth, product surfaces, accessible UI states */
+  --green-950: #102f30;
+  --green-900: #214a4a;
+  --green-800: #2e5d5c;
+  --green-700: #477977;
+  --green-600: #688f8c;
+  --green-500: #94b6ad;
+  --lime-500: #daf450;
+  --lime-400: #e5fa75;
+  --lime-200: #f0f9b9;
+
+  --white: #fdffff;
+  --paper: #f4f9f8;
+  --paper-strong: #eaf3f0;
+  --ink: #172e2e;
+  --ink-soft: #516968;
+  --muted: #708582;
+  --line: #d9e6e3;
+  --line-dark: rgb(253 255 255 / 17%);
+
+  /* Warm stage-light tint, limited to atmospheric lighting */
+  --stage-glow: #f1c57d;
+
   --font-display: "Barlow Condensed", Impact, "Arial Narrow", sans-serif;
   --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --container: 1240px;
@@ -24,6 +36,6 @@
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 26px;
-  --shadow-card: 0 18px 54px rgb(3 41 31 / 9%);
+  --shadow-card: 0 18px 54px rgb(16 47 48 / 9%);
   --ease-out: cubic-bezier(.2, .75, .25, 1);
 }

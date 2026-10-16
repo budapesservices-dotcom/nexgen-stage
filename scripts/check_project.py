@@ -134,6 +134,13 @@ def main() -> int:
     if not parser.meta_description or "prototype description" in parser.meta_description.lower():
         fail("meta description is blank or contains an internal prototype warning")
 
+    tokens = TOKEN_FILE.read_text(encoding="utf-8").lower()
+    if "--brand-teal: #214a4a" not in tokens or "--brand-lime: #daf450" not in tokens or "--brand-white: #fdffff" not in tokens:
+        fail("official NexGen brand colours have changed or are missing")
+    page_html = HTML_FILE.read_text(encoding="utf-8")
+    if "STEELCITY" not in page_html or "STAGE MODULES" not in page_html:
+        fail("official NexGen wordmark wording is missing")
+
     if not (ROOT / "scripts" / "main.js").is_file():
         fail("scripts/main.js is missing")
     js = (ROOT / "scripts" / "main.js").read_text(encoding="utf-8")
@@ -167,6 +174,7 @@ def main() -> int:
         fail("GitHub Pages deploy workflow no longer deploys on main")
 
     print("PASS  unique HTML IDs and valid in-page anchors")
+    print("PASS  official NexGen palette and wordmark wording")
     print("PASS  local CSS, script, and image references")
     print("PASS  one H1, main landmark, and accessible mobile-nav wiring")
     print("PASS  CSS custom properties are defined")

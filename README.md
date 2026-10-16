@@ -5,8 +5,9 @@ A lightweight homepage redesign concept built with plain HTML, CSS, and a small 
 ## Design direction
 
 - **Concept:** Engineered Energy — “From one module. To any stage.”
-- **Palette:** Deep Forest `#063D32`, Electric Lime `#B7EF59`, Studio White `#F5F7F2`, Carbon `#171D19`.
-- **Typography:** Barlow Condensed for display headlines; Inter for body copy and UI.
+- **Official base palette:** NexGen Teal `#214A4A`, Signal Lime `#DAF450`, Stage White `#FDFFFF`.
+- **Derived UI palette:** Backstage Teal `#102F30`, Mid Teal `#2E5D5C`, Mist `#EAF3F0`, Ink `#172E2E`, and restrained Stage Glow `#F1C57D` for atmospheric lighting.
+- **Typography:** Barlow Condensed for display headlines; Inter for body copy and UI. Header brand wording follows the supplied logo: NEXGEN / STEELCITY / STAGE MODULES.
 - **Visual principle:** nested-square geometry inspired by the NexGen mark, purposeful diagonals, and product-first storytelling.
 
 ## Editing rules
