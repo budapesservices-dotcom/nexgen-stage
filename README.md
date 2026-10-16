@@ -28,9 +28,11 @@ A lightweight homepage redesign concept built with plain HTML, CSS, and a small 
 - The contest brief requires preservation of the live site's SEO. The current meta description is editorial draft copy, not a verified copy of the live value. Before final delivery, compare the prototype against the supplied/live source HTML and preserve the exact title, meta description, canonical, schema, H1–H3 hierarchy, alt text, URLs, and internal links.
 - Do not treat prototype copy, illustrative SVGs, or placeholder metadata as verified product claims or production assets.
 
-## Run locally
+## Run and validate
 
 Open `index.html` directly for a quick review, or run `python -m http.server 8000` from the repository root and open `http://localhost:8000`.
+
+Run the dependency-free static integrity checks with `python scripts/check_project.py`. GitHub Actions also runs these checks and `node --check scripts/main.js` on pushes and pull requests. The checks verify local asset references, in-page anchors, unique IDs, CSS design-token use, SVG well-formedness, and essential deployment files.
 
 ## Commit policy
 
