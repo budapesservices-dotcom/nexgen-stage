@@ -17,7 +17,7 @@ A lightweight homepage redesign concept built with plain HTML, CSS, and a small 
 - `styles/components.css` contains shared UI patterns and buttons.
 - `styles/sections.css` contains section-specific desktop styles.
 - `styles/responsive.css` contains breakpoint adjustments.
-- `scripts/main.js` contains only the mobile navigation interaction.
+- `scripts/main.js` contains only the mobile navigation interaction; the desktop “More” menu uses native HTML `<details>` and adds no JavaScript.
 - `assets/images/*.svg` are temporary concept illustrations. The customer gallery, storage example and organisation logos currently reference public media already shown on the existing client site; package and optimize approved assets locally before final delivery.
 
 ## Technical principles
@@ -32,7 +32,7 @@ A lightweight homepage redesign concept built with plain HTML, CSS, and a small 
 
 Open `index.html` directly for a quick review, or run `python -m http.server 8000` from the repository root and open `http://localhost:8000`.
 
-Run the dependency-free static integrity checks with `python scripts/check_project.py`. GitHub Actions also runs these checks and `node --check scripts/main.js` on pushes and pull requests. The checks verify local asset references, in-page anchors, unique IDs, CSS design-token use, SVG well-formedness, and essential deployment files.
+Run the dependency-free static integrity checks with `python scripts/check_project.py`. GitHub Actions also runs these checks and `node --check scripts/main.js` on pushes and pull requests. The validator checks that the native More menu becomes an in-flow disclosure on mobile. The checks verify local asset references, in-page anchors, unique IDs, CSS design-token use, SVG well-formedness, and essential deployment files.
 
 ## Commit policy
 

@@ -142,6 +142,8 @@ def main() -> int:
         fail("progressive-enhancement navigation fallback is missing")
     if "closeNavigation(true)" not in js:
         fail("Escape key should restore focus to the navigation toggle")
+    if ".site-nav__dropdown { position: static" not in responsive:
+        fail("the mobile More dropdown must stay in normal navigation flow")
 
     css = "\n".join(path.read_text(encoding="utf-8") for path in CSS_FILES)
     token_css = TOKEN_FILE.read_text(encoding="utf-8")

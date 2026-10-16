@@ -37,10 +37,11 @@
     <div class="container site-header__inner">
       <a class="brand" href="#top" aria-label="NexGen Portable Staging home">
         <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
-          <rect x="2.5" y="2.5" width="43" height="43" fill="none" stroke="currentColor" stroke-width="4"/>
-          <rect x="12" y="12" width="24" height="24" fill="none" stroke="currentColor" stroke-width="4"/>
+          <rect class="brand__mark-outer" x="2.5" y="2.5" width="43" height="43" fill="none" stroke="currentColor" stroke-width="4"/>
+          <rect class="brand__mark-inner" x="12" y="12" width="24" height="24" fill="none" stroke="currentColor" stroke-width="4"/>
+          <path class="brand__mark-core" d="M20 20h8v8h-8z" fill="currentColor"/>
         </svg>
-        <span class="brand__wordmark"><strong>NEX<span>G</span>EN</strong><small>PORTABLE STAGING</small></span>
+        <span class="brand__wordmark"><strong>NEX<span>G</span>EN</strong><small>MAGNETIC STAGING SYSTEMS</small></span>
       </a>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
@@ -49,11 +50,21 @@
       </button>
 
       <nav class="site-nav" id="primary-navigation" aria-label="Main navigation" data-site-nav>
-        <a class="site-nav__link is-active" href="#top">Home</a>
-        <a class="site-nav__link" href="#ranges">Our ranges</a>
-        <a class="site-nav__link" href="#system">The system</a>
-        <a class="site-nav__link" href="#in-action">See it in action</a>
-        <a class="button button--small button--lime site-nav__cta" href="https://www.portablestage.co.uk/contact/">Get a quote <span aria-hidden="true">↗</span></a>
+        <a class="site-nav__link" href="#ranges">Products</a>
+        <a class="site-nav__link" href="#system">How it works</a>
+        <a class="site-nav__link" href="#gallery">Gallery</a>
+        <a class="site-nav__link" href="#in-action">Videos</a>
+        <a class="site-nav__link site-nav__link--shop" href="https://www.portablestage.co.uk/shop/">Shop <span aria-hidden="true">↗</span></a>
+        <details class="site-nav__more">
+          <summary class="site-nav__more-trigger">More</summary>
+          <div class="site-nav__dropdown">
+            <a href="https://www.portablestage.co.uk/my-account/">Customer login</a>
+            <a href="https://www.portablestage.co.uk/about/">About NexGen</a>
+            <a href="https://www.portablestage.co.uk/portable-stage-size-guide-uk/">Stage size guide</a>
+            <a href="https://www.portablestage.co.uk/contact/">Contact the team</a>
+          </div>
+        </details>
+        <a class="button button--small button--lime site-nav__cta" href="https://www.portablestage.co.uk/quote-me/">Get a quote <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
@@ -204,7 +215,7 @@
       </div>
     </section>
 
-    <section class="customer-gallery section-pad" aria-labelledby="gallery-title">
+    <section class="customer-gallery section-pad" id="gallery" aria-labelledby="gallery-title">
       <div class="container">
         <div class="section-heading section-heading--split">
           <div><p class="eyebrow"><span></span> Out in the real world</p><h2 id="gallery-title">Built for <em>the moment.</em></h2></div>
