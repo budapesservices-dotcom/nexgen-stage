@@ -139,6 +139,7 @@
 .site-footer { color: #c3d8ca; background: #102829; }
 .site-footer__main { display: grid; grid-template-columns: 1.05fr 1.2fr .75fr 1fr; gap: 2rem; padding-block: 3.2rem; }
 .brand--footer { align-self: start; }
+.brand--footer .brand__logo { width: 112px; }
 .site-footer__summary { max-width: 280px; margin: 0; color: #a8c4b9; font-size: .74rem; line-height: 1.8; }
 .footer-nav { display: grid; align-content: start; gap: .7rem; }
 .footer-nav a, .site-footer__contact a { color: #fdffff; font-size: .74rem; transition: color 160ms ease; }

@@ -6,9 +6,6 @@
   :root { --gutter: clamp(1.25rem, 3.5vw, 2.25rem); }
   .site-header__inner { gap: 1rem; }
   .brand { gap: .6rem; }
-  .brand__mark { width: 39px; height: 39px; }
-  .brand__wordmark strong { font-size: 1.45rem; }
-  .brand__wordmark small { font-size: .44rem; letter-spacing: .12em; }
   .site-nav { gap: .82rem; }
   .site-nav__link, .site-nav__more-trigger { font-size: .68rem; }
   .site-nav__cta { padding-inline: .8rem; font-size: .66rem; }
@@ -35,10 +32,6 @@
   /* No-JS fallback: keep the navigation visible in normal document flow. */
   .site-header { position: relative; top: auto; background: var(--green-950); }
   .site-header__inner { min-height: 70px; flex-wrap: wrap; padding-block: .6rem; }
-  .brand__mark { width: 36px; height: 36px; }
-  .brand__wordmark strong { font-size: 1.22rem; }
-  .brand__subname { font-size: .66rem; letter-spacing: .16em; }
-  .brand__wordmark small { font-size: .37rem; letter-spacing: .12em; }
   .site-nav { display: grid; width: 100%; gap: 0; padding: .55rem 0 1rem; }
   .site-nav__more { width: 100%; }
   .site-nav__link, .site-nav__more-trigger { display: flex; width: 100%; align-items: center; justify-content: space-between; padding: .85rem .2rem; font-size: .88rem; border-bottom: 1px solid var(--line-dark); }
@@ -196,4 +189,13 @@
   .testimonial-card figcaption { flex-wrap: wrap; }
   .testimonial-card__type { margin-left: 0; }
   .partner-strip__inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+
+/* Use the supplied full lockup at smaller sizes; never recreate its lettering with a web font. */
+@media (max-width: 1100px) {
+  .brand__logo { width: 74px; }
+}
+@media (max-width: 760px) {
+  .brand__logo { width: 64px; }
 }
