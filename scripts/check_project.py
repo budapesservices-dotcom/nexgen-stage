@@ -138,12 +138,8 @@ def main() -> int:
     if "--brand-teal: #214a4a" not in tokens or "--brand-lime: #daf450" not in tokens or "--brand-white: #fdffff" not in tokens:
         fail("official NexGen brand colours have changed or are missing")
     page_html = HTML_FILE.read_text(encoding="utf-8")
-    if 'aria-label="NexGen STEELCITY STAGE MODULES home"' not in page_html:
-        fail("official NexGen logo link needs its accessible name")
-    if page_html.count('src="assets/images/nexgenlogo.svg"') < 2:
-        fail("official logo SVG must be used in both header and footer")
-    if not (ROOT / "assets" / "images" / "nexgenlogo.svg").is_file():
-        fail("official NexGen logo SVG is missing")
+    if "STEELCITY" not in page_html or "STAGE MODULES" not in page_html:
+        fail("official NexGen wordmark wording is missing")
 
     if not (ROOT / "scripts" / "main.js").is_file():
         fail("scripts/main.js is missing")
@@ -179,7 +175,6 @@ def main() -> int:
 
     print("PASS  unique HTML IDs and valid in-page anchors")
     print("PASS  official NexGen palette and wordmark wording")
-    print("PASS  official SVG lockup used in header and footer")
     print("PASS  local CSS, script, and image references")
     print("PASS  one H1, main landmark, and accessible mobile-nav wiring")
     print("PASS  CSS custom properties are defined")

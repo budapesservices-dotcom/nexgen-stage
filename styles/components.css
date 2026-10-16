@@ -8,8 +8,17 @@
 
 .site-header { position: absolute; z-index: 30; top: 35px; right: 0; left: 0; color: var(--white); border-bottom: 1px solid rgb(230 247 235 / 14%); background: linear-gradient(180deg, rgb(16 47 48 / 20%), rgb(16 47 48 / 4%)); }
 .site-header__inner { display: flex; min-height: 88px; align-items: center; justify-content: space-between; gap: clamp(1.25rem, 2.4vw, 2.1rem); }
-.brand { display: inline-flex; align-items: center; flex: 0 0 auto; line-height: 0; }
-.brand__logo { display: block; width: 78px; height: auto; flex: 0 0 auto; background: var(--brand-teal); }
+.brand { display: inline-flex; align-items: center; gap: .82rem; flex: 0 0 auto; color: var(--lime-500); }
+.brand__mark { width: 45px; height: 45px; flex: 0 0 auto; overflow: visible; }
+.brand__mark-outer, .brand__mark-inner { transition: stroke 180ms ease, transform 220ms var(--ease-out); transform-box: fill-box; transform-origin: center; }
+.brand__mark-core { opacity: .92; transition: opacity 180ms ease; }
+.brand:hover .brand__mark-outer { transform: rotate(45deg); }
+.brand:hover .brand__mark-inner { transform: rotate(-45deg); }
+.brand:hover .brand__mark-core { opacity: .65; }
+.brand__wordmark { display: grid; gap: .13rem; color: var(--white); line-height: 1; }
+.brand__wordmark strong { font-family: var(--font-display); font-size: 1.62rem; letter-spacing: .025em; font-weight: 800; }
+.brand__wordmark strong span { color: var(--lime-500); }
+.brand__wordmark small { color: #b7d3ca; font-size: .48rem; font-weight: 700; letter-spacing: .145em; white-space: nowrap; }
 .site-nav { display: flex; align-items: center; gap: clamp(.8rem, 1.45vw, 1.35rem); }
 .site-nav__link, .site-nav__more-trigger { position: relative; display: inline-flex; align-items: center; gap: .35rem; padding-block: .7rem; color: rgb(255 255 255 / 76%); font-size: .72rem; font-weight: 600; white-space: nowrap; transition: color 180ms ease; }
 .site-nav__link::after { position: absolute; right: 0; bottom: .25rem; left: 0; height: 2px; background: var(--lime-500); content: ""; transform: scaleX(0); transform-origin: left; transition: transform 220ms var(--ease-out); }

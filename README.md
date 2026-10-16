@@ -7,7 +7,7 @@ A lightweight homepage redesign concept built with plain HTML, CSS, and a small 
 - **Concept:** Engineered Energy — “From one module. To any stage.”
 - **Official base palette:** NexGen Teal `#214A4A`, Signal Lime `#DAF450`, Stage White `#FDFFFF`.
 - **Derived UI palette:** Backstage Teal `#102F30`, Mid Teal `#2E5D5C`, Mist `#EAF3F0`, Ink `#172E2E`, and restrained Stage Glow `#F1C57D` for atmospheric lighting.
-- **Typography:** Barlow Condensed for display headlines; Inter for body copy and UI. Header and footer use the supplied traced SVG artwork for the official NEXGEN / STEELCITY / STAGE MODULES lockup; its letterforms are paths, not an extractable font.
+- **Typography:** Barlow Condensed for display headlines; Inter for body copy and UI. Header brand wording follows the supplied logo: NEXGEN / STEELCITY / STAGE MODULES.
 - **Visual principle:** nested-square geometry inspired by the NexGen mark, purposeful diagonals, and product-first storytelling.
 
 ## Editing rules
@@ -19,7 +19,7 @@ A lightweight homepage redesign concept built with plain HTML, CSS, and a small 
 - `styles/sections.css` contains section-specific desktop styles.
 - `styles/responsive.css` contains breakpoint adjustments.
 - `scripts/main.js` contains only the mobile navigation interaction; the desktop “More” menu uses native HTML `<details>` and adds no JavaScript.
-- `assets/images/nexgenlogo.svg` is the supplied official logo converted to paths, used directly in header and footer. Other `assets/images/*.svg` files are temporary concept illustrations. The customer gallery, storage example and organisation logos currently reference public media already shown on the existing client site; package and optimize approved assets locally before final delivery.
+- `assets/images/*.svg` are temporary concept illustrations. The customer gallery, storage example and organisation logos currently reference public media already shown on the existing client site; package and optimize approved assets locally before final delivery.
 
 ## Technical principles
 
