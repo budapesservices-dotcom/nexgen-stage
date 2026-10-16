@@ -55,7 +55,6 @@
   .mega-menu__feature h2 { max-width: none; margin: .7rem 0 .45rem; font-size: 1.75rem; }
   .mega-menu__feature > p { max-width: 44ch; margin-bottom: .65rem; font-size: .72rem; }
   .mega-menu__feature-link { margin-top: .25rem; }
-  .mega-menu__index { display: none; }
   .mega-menu__content { padding: .8rem .65rem .65rem; }
   .mega-menu__topline { padding-inline: .25rem; }
   .mega-menu__topline small { font-size: .46rem; }

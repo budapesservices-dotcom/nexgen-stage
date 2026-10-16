@@ -169,6 +169,18 @@ def main() -> int:
         fail("the mobile Explore mega menu must stay in normal navigation flow")
     if 'class="site-nav__dropdown site-nav__dropdown--mega"' not in page_html or 'class="mega-menu__links"' not in page_html:
         fail("the desktop Explore mega menu structure is missing")
+    nav_start = page_html.index('<nav class="site-nav"')
+    nav_end = page_html.index("</nav>", nav_start) + len("</nav>")
+    nav_html = page_html[nav_start:nav_end]
+    if any(marker in nav_html for marker in ("mega-menu__number", "mega-menu__arrow", "mega-menu__index", "NG / 01")):
+        fail("decorative numbering and diagonal arrows should not appear in the Explore menu")
+    if 'class="site-nav__link site-nav__link--shop" href="https://www.portablestage.co.uk/shop/">Shop</a>' not in page_html:
+        fail("Shop link must stay plain, without a diagonal arrow")
+    all_css = "\n".join(path.read_text(encoding="utf-8") for path in CSS_FILES)
+    if ".site-nav__more[open] > .site-nav__more-trigger { font-size: .78rem; }" not in all_css:
+        fail("Explore label should enlarge slightly while its dropdown is open")
+    if ".mega-menu__item:hover, .mega-menu__item:focus-visible { color: var(--lime-500); }" not in all_css:
+        fail("mega menu items should use a clean text-colour hover")
     for required_link in ('href="#ranges"', 'href="#system"', 'href="tel:+441143992978"', 'href="https://www.portablestage.co.uk/quote-me/"'):
         if required_link not in page_html:
             fail(f"primary navigation destination is missing: {required_link}")
