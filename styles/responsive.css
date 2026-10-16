@@ -26,22 +26,29 @@
   .announcement__inner p { line-height: 1.35; }
   .announcement__inner p strong { display: none; }
   .announcement__inner > a { font-size: .59rem; }
-  .site-header { top: 32px; }
-  .site-header__inner { min-height: 70px; }
+  /* No-JS fallback: keep the navigation visible in normal document flow. */
+  .site-header { position: relative; top: auto; background: var(--green-950); }
+  .site-header__inner { min-height: 70px; flex-wrap: wrap; padding-block: .6rem; }
   .brand__mark { width: 34px; height: 34px; }
   .brand__wordmark strong { font-size: 1rem; }
   .brand__wordmark small { font-size: .43rem; }
-  .nav-toggle { position: relative; z-index: 2; display: grid; width: 44px; height: 44px; place-items: center; color: var(--white); background: transparent; border: 1px solid rgb(255 255 255 / 25%); border-radius: 6px; cursor: pointer; }
-  .nav-toggle__bars { display: grid; gap: 5px; width: 18px; }
-  .nav-toggle__bars i { display: block; width: 18px; height: 2px; background: currentColor; transition: transform 180ms ease; }
-  .nav-toggle[aria-expanded="true"] .nav-toggle__bars i:first-child { transform: translateY(3.5px) rotate(45deg); }
-  .nav-toggle[aria-expanded="true"] .nav-toggle__bars i:last-child { transform: translateY(-3.5px) rotate(-45deg); }
-  .site-nav { position: fixed; z-index: 1; inset: 102px 0 auto; display: grid; gap: 0; max-height: calc(100svh - 102px); padding: .7rem var(--gutter) 1.4rem; overflow-y: auto; background: #03271f; border-bottom: 1px solid rgb(183 239 89 / 25%); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease; }
-  .site-nav.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
-  .site-nav__link { padding: 1rem .2rem; font-size: .9rem; border-bottom: 1px solid var(--line-dark); }
+  .site-nav { display: grid; width: 100%; gap: 0; padding: .55rem 0 1rem; }
+  .site-nav__link { padding: .85rem .2rem; font-size: .88rem; border-bottom: 1px solid var(--line-dark); }
   .site-nav__link::after { bottom: 0; right: auto; width: 50px; }
   .site-nav__cta { margin-top: 1rem; justify-self: start; }
-  .hero { padding-top: 102px; }
+  .hero { padding-top: 0; }
+
+  /* Collapsible overlay is enabled only after the controller has initialized. */
+  .has-js .site-header { position: absolute; top: 32px; background: transparent; }
+  .has-js .site-header__inner { flex-wrap: nowrap; }
+  .has-js .nav-toggle { position: relative; z-index: 2; display: grid; width: 44px; height: 44px; flex: 0 0 auto; place-items: center; color: var(--white); background: transparent; border: 1px solid rgb(255 255 255 / 25%); border-radius: 6px; cursor: pointer; }
+  .has-js .nav-toggle__bars { display: grid; gap: 5px; width: 18px; }
+  .has-js .nav-toggle__bars i { display: block; width: 18px; height: 2px; background: currentColor; transition: transform 180ms ease; }
+  .has-js .nav-toggle[aria-expanded="true"] .nav-toggle__bars i:first-child { transform: translateY(3.5px) rotate(45deg); }
+  .has-js .nav-toggle[aria-expanded="true"] .nav-toggle__bars i:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+  .has-js .site-nav { position: fixed; z-index: 1; inset: 102px 0 auto; display: grid; width: auto; gap: 0; max-height: calc(100svh - 102px); padding: .7rem var(--gutter) 1.4rem; overflow-y: auto; background: #03271f; border-bottom: 1px solid rgb(183 239 89 / 25%); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease; }
+  .has-js .site-nav.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+  .has-js .hero { padding-top: 102px; }
   .hero__layout { min-height: 0; grid-template-columns: 1fr; gap: 2.4rem; padding-block: 4.1rem 2.7rem; }
   .hero__content { padding-block: 0; }
   .hero__title { max-width: 560px; font-size: clamp(2.8rem, 11.8vw, 4.4rem); line-height: .9; }

@@ -25,7 +25,7 @@ A lightweight homepage redesign concept built with plain HTML, CSS, and a small 
 - No framework, bundler, or third-party JavaScript dependency.
 - Keep JavaScript small and add behavior only when native HTML/CSS cannot do the job.
 - Preserve semantic HTML, keyboard usability, visible focus, contrast, and reduced-motion preferences.
-- The contest brief requires preservation of the live site's SEO. Before final delivery, compare the prototype against the supplied/live source HTML and preserve the original title, meta description, canonical, schema, H1–H3 hierarchy, alt text, and internal links as required.
+- The contest brief requires preservation of the live site's SEO. The current meta description is editorial draft copy, not a verified copy of the live value. Before final delivery, compare the prototype against the supplied/live source HTML and preserve the exact title, meta description, canonical, schema, H1–H3 hierarchy, alt text, URLs, and internal links.
 - Do not treat prototype copy, illustrative SVGs, or placeholder metadata as verified product claims or production assets.
 
 ## Run locally

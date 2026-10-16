@@ -1,19 +1,24 @@
 (() => {
+  document.documentElement.classList.add('has-js');
+
   const toggle = document.querySelector('[data-nav-toggle]');
   const navigation = document.querySelector('[data-site-nav]');
+  const label = toggle?.querySelector('.sr-only');
 
-  if (!toggle || !navigation) return;
+  if (!toggle || !navigation || !label) return;
 
-  const closeNavigation = () => {
+  const closeNavigation = (restoreFocus = false) => {
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.querySelector('.sr-only').textContent = 'Open navigation';
+    label.textContent = 'Open navigation';
     navigation.classList.remove('is-open');
     document.body.classList.remove('nav-is-open');
+
+    if (restoreFocus) toggle.focus();
   };
 
   const openNavigation = () => {
     toggle.setAttribute('aria-expanded', 'true');
-    toggle.querySelector('.sr-only').textContent = 'Close navigation';
+    label.textContent = 'Close navigation';
     navigation.classList.add('is-open');
     document.body.classList.add('nav-is-open');
   };
@@ -24,11 +29,20 @@
   });
 
   navigation.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', closeNavigation);
+    link.addEventListener('click', () => closeNavigation());
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeNavigation();
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+      closeNavigation(true);
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+    if (isExpanded && !navigation.contains(event.target) && !toggle.contains(event.target)) {
+      closeNavigation();
+    }
   });
 
   window.addEventListener('resize', () => {
