@@ -166,7 +166,14 @@ def main() -> int:
     if "closeNavigation(true)" not in js:
         fail("Escape key should restore focus to the navigation toggle")
     if ".site-nav__dropdown { position: static" not in responsive:
-        fail("the mobile More dropdown must stay in normal navigation flow")
+        fail("the mobile Explore mega menu must stay in normal navigation flow")
+    if 'class="site-nav__dropdown site-nav__dropdown--mega"' not in page_html or 'class="mega-menu__links"' not in page_html:
+        fail("the desktop Explore mega menu structure is missing")
+    for required_link in ('href="#ranges"', 'href="#system"', 'href="tel:+441143992978"', 'href="https://www.portablestage.co.uk/quote-me/"'):
+        if required_link not in page_html:
+            fail(f"primary navigation destination is missing: {required_link}")
+    if "details[open]" not in js or "openDropdown.querySelector('summary')?.focus()" not in js:
+        fail("the Explore menu must close accessibly on Escape and navigation")
 
     css = "\n".join(path.read_text(encoding="utf-8") for path in CSS_FILES)
     token_css = TOKEN_FILE.read_text(encoding="utf-8")

@@ -29,16 +29,31 @@
   });
 
   navigation.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => closeNavigation());
+    link.addEventListener('click', () => {
+      navigation.querySelectorAll('details[open]').forEach((menu) => { menu.open = false; });
+      closeNavigation();
+    });
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+    if (event.key !== 'Escape') return;
+
+    const openDropdown = navigation.querySelector('details[open]');
+    if (openDropdown) {
+      openDropdown.open = false;
+      openDropdown.querySelector('summary')?.focus();
+    }
+
+    if (toggle.getAttribute('aria-expanded') === 'true') {
       closeNavigation(true);
     }
   });
 
   document.addEventListener('click', (event) => {
+    navigation.querySelectorAll('details[open]').forEach((menu) => {
+      if (!menu.contains(event.target)) menu.open = false;
+    });
+
     const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
     if (isExpanded && !navigation.contains(event.target) && !toggle.contains(event.target)) {
       closeNavigation();
