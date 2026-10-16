@@ -137,7 +137,21 @@ def main() -> int:
     tokens = TOKEN_FILE.read_text(encoding="utf-8").lower()
     if "--brand-teal: #214a4a" not in tokens or "--brand-lime: #daf450" not in tokens or "--brand-white: #fdffff" not in tokens:
         fail("official NexGen brand colours have changed or are missing")
+
     page_html = HTML_FILE.read_text(encoding="utf-8")
+    hero_css = (ROOT / "styles" / "sections.css").read_text(encoding="utf-8")
+    if 'class="hero__grid"' not in page_html or 'class="hero__grid cyber-pattern"' in page_html:
+        fail("the hero should use the static grid layer without animation classes")
+    if ".hero__grid {" not in hero_css or "@keyframes cyber-move" in hero_css or "animation: cyber-move" in hero_css:
+        fail("the hero grid must remain static and CSS-only")
+    if "110px 110px" not in hero_css:
+        fail("the main hero grid scale should remain large and calm")
+    if "--grid-line: rgb(218 244 80 / 9%)" not in tokens or "--fine-grid-line: rgb(253 255 255 / 3%)" not in tokens:
+        fail("hero grid lines must use the official lime and white palette")
+    if "3 233 244" in hero_css or "217 3 244" in hero_css:
+        fail("old cyan/magenta grid colours must not return")
+    if "rgb(33 74 74) / 28%" in hero_css:
+        fail("invalid RGB alpha syntax in the hero backdrop")
     if "STEELCITY" not in page_html or "STAGE MODULES" not in page_html:
         fail("official NexGen wordmark wording is missing")
 
@@ -175,6 +189,7 @@ def main() -> int:
 
     print("PASS  unique HTML IDs and valid in-page anchors")
     print("PASS  official NexGen palette and wordmark wording")
+    print("PASS  large-scale static NexGen hero grid")
     print("PASS  local CSS, script, and image references")
     print("PASS  one H1, main landmark, and accessible mobile-nav wiring")
     print("PASS  CSS custom properties are defined")

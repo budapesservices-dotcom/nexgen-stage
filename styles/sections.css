@@ -1,7 +1,21 @@
 /* HERO — one strong story, not a stack of effects. */
 .hero { position: relative; overflow: clip; padding-top: 120px; color: var(--white); background: var(--green-950); isolation: isolate; }
-.hero::before { position: absolute; z-index: -2; inset: 0; background: radial-gradient(ellipse at 72% 7%, color-mix(in srgb, var(--stage-glow) 12%, transparent), transparent 31%), radial-gradient(ellipse at 74% 28%, rgb(33 74 74) / 28%), transparent 43%), linear-gradient(115deg, #102f30 0%, #214a4a 58%, #102829 100%); content: ""; }
-.hero__grid { position: absolute; z-index: -1; inset: 0; opacity: .14; background-image: linear-gradient(rgb(204 239 215 / 10%) 1px, transparent 1px), linear-gradient(90deg, rgb(204 239 215 / 10%) 1px, transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(90deg, black, transparent 92%); }
+.hero::before { position: absolute; z-index: -2; inset: 0; background: radial-gradient(ellipse at 72% 7%, rgb(241 197 125 / 11%), transparent 31%), radial-gradient(ellipse at 74% 28%, rgb(33 74 74 / 28%), transparent 43%), linear-gradient(115deg, #102f30 0%, #214a4a 58%, #102829 100%); content: ""; }
+.hero__grid {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background-color: transparent;
+  background-image:
+    radial-gradient(circle at center, transparent 30%, rgb(16 47 48 / 88%) 90%),
+    linear-gradient(0deg, transparent 24%, var(--grid-line) 25%, var(--grid-line) 26%, transparent 27%, transparent 74%, var(--grid-line) 75%, var(--grid-line) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, var(--grid-line) 25%, var(--grid-line) 26%, transparent 27%, transparent 74%, var(--grid-line) 75%, var(--grid-line) 76%, transparent 77%, transparent),
+    linear-gradient(var(--fine-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--fine-grid-line) 1px, transparent 1px);
+  background-size: 100% 100%, 110px 110px, 110px 110px, 34px 34px, 34px 34px;
+  background-position: 0 0;
+}
 .hero__portal { position: absolute; z-index: -1; right: -6%; top: 12%; width: min(52vw, 780px); aspect-ratio: 1; border: clamp(18px, 3vw, 48px) solid var(--lime-500); transform: rotate(45deg); pointer-events: none; }
 .hero__portal--outer { opacity: .18; }
 .hero__portal--inner { top: 24%; right: 5%; width: min(34vw, 500px); border-width: clamp(9px, 1.5vw, 22px); opacity: .25; }

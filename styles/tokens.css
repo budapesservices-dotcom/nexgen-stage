@@ -29,6 +29,10 @@
   /* Warm stage-light tint, limited to atmospheric lighting */
   --stage-glow: #f1c57d;
 
+  /* Large-scale static hero grid */
+  --grid-line: rgb(218 244 80 / 9%);
+  --fine-grid-line: rgb(253 255 255 / 3%);
+
   --font-display: "Barlow Condensed", Impact, "Arial Narrow", sans-serif;
   --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --container: 1240px;

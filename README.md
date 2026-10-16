@@ -8,7 +8,7 @@ A lightweight homepage redesign concept built with plain HTML, CSS, and a small 
 - **Official base palette:** NexGen Teal `#214A4A`, Signal Lime `#DAF450`, Stage White `#FDFFFF`.
 - **Derived UI palette:** Backstage Teal `#102F30`, Mid Teal `#2E5D5C`, Mist `#EAF3F0`, Ink `#172E2E`, and restrained Stage Glow `#F1C57D` for atmospheric lighting.
 - **Typography:** Barlow Condensed for display headlines; Inter for body copy and UI. Header brand wording follows the supplied logo: NEXGEN / STEELCITY / STAGE MODULES.
-- **Visual principle:** nested-square geometry inspired by the NexGen mark, purposeful diagonals, and product-first storytelling.
+- **Visual principle:** nested-square geometry inspired by the NexGen mark, purposeful diagonals, product-first storytelling, and a static large-scale grid in the hero. Main grid lines use Signal Lime at low opacity; a finer secondary grid uses Stage White. The background uses CSS gradients only, with no continuous animation.
 
 ## Editing rules
 
