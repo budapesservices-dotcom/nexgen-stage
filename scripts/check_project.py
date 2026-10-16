@@ -103,11 +103,12 @@ def main() -> int:
 
     id_set = set(parser.ids)
     missing_anchors = sorted({
-        urlparse(ref).fragment
+        fragment
         for ref in parser.references
-        if ref.startswith("#") and urlparse(ref).fragment not in id_set
+        if ref.startswith("#")
+        for fragment in [urlparse(ref).fragment]
+        if fragment and fragment not in id_set
     })
-    missing_anchors.discard("")
     if missing_anchors:
         fail(f"broken in-page anchor(s): {', '.join(missing_anchors)}")
 
