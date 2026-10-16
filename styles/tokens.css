@@ -1,0 +1,28 @@
+:root {
+  color-scheme: light;
+  --green-950: #03291f;
+  --green-900: #063d32;
+  --green-800: #0b4c3d;
+  --green-700: #17634e;
+  --green-500: #4a8e68;
+  --lime-500: #b7ef59;
+  --lime-400: #caff75;
+  --lime-200: #e4f8c1;
+  --white: #ffffff;
+  --paper: #f5f7f2;
+  --paper-strong: #edf1e9;
+  --ink: #171d19;
+  --ink-soft: #4e5d53;
+  --muted: #7b897f;
+  --line: #dce5dc;
+  --line-dark: rgb(225 245 229 / 17%);
+  --font-display: "Barlow Condensed", Impact, "Arial Narrow", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --container: 1240px;
+  --gutter: clamp(1.15rem, 4vw, 3rem);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 26px;
+  --shadow-card: 0 18px 54px rgb(3 41 31 / 9%);
+  --ease-out: cubic-bezier(.2, .75, .25, 1);
+}
